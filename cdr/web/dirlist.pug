@@ -28,6 +28,8 @@
             th Index of First Packet File
             td
               span(data-cdr={tlm: [{name:'/FM/FM_DirListPkt_t/FirstFile'}], indicator:'text'}) ---
+      table.table.table-condensed
+        tbody
           tr
             th File Name
             th File Size
@@ -46,6 +48,6 @@
           - }
               
     footer.btn-group(role="group")      
-      button.btn.cdr-outline-primary(data-cdr={cmd:{name:'/FM/FM_GetDirFileCmd_t'},indicator:'cmd'}) 
-      button.btn.cdr-outline-primary(data-cdr={cmd:{name:'/FM/FM_GetDirPktCmd_t'},indicator:'cmd'}) 
+      button.btn.cdr-outline-primary(data-cdr={cmd:{name:'/FM/FM_GetDirPktCmd_t'},indicator:'cmd'}) Get Directory (telemetry)
+      button.btn.cdr-outline-primary(data-cdr={cmd:{name:'/FM/FM_GetDirFileCmd_t'},indicator:'cmd'}) Get Directory (file)
 - });

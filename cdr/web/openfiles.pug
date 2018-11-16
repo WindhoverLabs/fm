@@ -16,10 +16,12 @@
             th Number of Open Files
             td
               span(data-cdr={tlm: [{name:'/FM/FM_OpenFilesPkt_t/NumOpenFiles'}], indicator:'text'}) ---
+      table.table.table-condensed
+        tbody
           tr
             th Logical Name
             th App Name
-          - for(var i = 0; i < FM_TABLE_ENTRY_COUNT; ++i) {
+          - for(var i = 0; i < OS_MAX_NUM_OPEN_FILES; ++i) {
           tr
             td
               span(data-cdr={tlm: [{name:'/FM/FM_OpenFilesPkt_t/OpenFilesList[' + i + '].LogicalName'}], indicator:'text'}) ---
@@ -28,7 +30,6 @@
           - }
               
     footer.btn-group(role="group")      
-      button.btn.cdr-outline-primary(data-cdr={cmd:{name:'/FM/FM_GetFreeSpaceCmd_t'},indicator:'cmd'}) 
-      button.btn.cdr-outline-primary(data-cdr={cmd:{name:'/FM/FM_GetOpenFilesCmd_t'},indicator:'cmd'}) 
+      button.btn.cdr-outline-primary(data-cdr={cmd:{name:'/FM/FM_GetOpenFilesCmd_t'},indicator:'cmd'})  Get Open Files
 - });
       

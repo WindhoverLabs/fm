@@ -19,14 +19,14 @@
           - for(var i = 0; i < FM_TABLE_ENTRY_COUNT; ++i) {
           tr
             td
-              span(data-cdr={tlm: [{name:'/FM/FM_FreeSpacePktEntry_t/FileSys[' + i + '].Name'}], indicator:'text'}) ---
+              span(data-cdr={tlm: [{name:'/FM/FM_FreeSpacePkt_t/FileSys[' + i + '].Name'}], indicator:'text'}) ---
             td
-              span(data-cdr={tlm: [{name:'/FM/FM_FreeSpacePktEntry_t/FileSys[' + i + '].FreeSpace_A'}],indicator:'text'}) ---
+              span(data-cdr={tlm: [{name:'/FM/FM_FreeSpacePkt_t/FileSys[' + i + '].FreeSpace_A'}],indicator:'text'}) ---
             td
-              span(data-cdr={tlm: [{name:'/FM/FM_FreeSpacePktEntry_t/FileSys[' + i + '].FreeSpace_B'}], indicator:'text'}) ---
+              span(data-cdr={tlm: [{name:'/FM/FM_FreeSpacePkt_t/FileSys[' + i + '].FreeSpace_B'}], indicator:'text'}) ---
           - }
               
     footer.btn-group(role="group")      
-      button.btn.cdr-outline-primary(data-cdr={cmd:{name:'/FM/FM_GetFreeSpaceCmd_t'},indicator:'cmd'}) 
+      button.btn.cdr-outline-primary(data-cdr={cmd:{name:'/FM/FM_GetFreeSpaceCmd_t'},indicator:'cmd'}) Get Free Space
 - });
       

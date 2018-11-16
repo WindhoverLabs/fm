@@ -47,7 +47,7 @@ module.exports = class CfeCdrPlugin extends CdrPlugin {
 				dirlist: {
 					type: CdrPlugin.ContentType.PANEL,
 					shortDescription: 'FM Directory Listing',
-					longDescription: 'FM Directory Listing'',
+					longDescription: 'FM Directory Listing',
 					filePath: '/dirlist.pug'
 				}
       }
