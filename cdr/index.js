@@ -6,32 +6,50 @@ const CdrPlugin = require(path.join(global.CDR_INSTALL_DIR, '/commander/classes/
 
 module.exports = class CfeCdrPlugin extends CdrPlugin {
   constructor(urlBase) {
-    super('amc', path.join(__dirname, 'web', urlBase));
+    super('fm', path.join(__dirname, 'web', urlBase));
   }
 
   getContent() {
     var result = {
-      shortDescription: 'Actuator and Motor Control',
-      longDescription: 'Actuator and Motor Control.',
+      shortDescription: 'File Management',
+      longDescription: 'File Management',
       nodes: {
 				main: {
 					type: CdrPlugin.ContentType.LAYOUT,
 					shortDescription: 'Main',
-					longDescription: 'Main AMC.',
+					longDescription: 'Main FM.',
 					filePath: '/main_layout.lyt'
 				},
-				cdh: {
+				hk: {
 					type: CdrPlugin.ContentType.PANEL,
-					shortDescription: 'Command and Data Handling',
-					longDescription: 'Command counters.',
-					filePath: '/cdh.pug'
+					shortDescription: 'FM Housekeeping',
+					longDescription: 'FM Housekeeping',
+					filePath: '/hk.pug'
 				},
-                ao: {
-                    type: CdrPlugin.ContentType.PANEL,
-                    shortDescription: 'Actuator Outputs',
-                    longDescription: 'Actuator Outputs',
-                    filePath: '/ao.pug'
-                }
+				freespace: {
+					type: CdrPlugin.ContentType.PANEL,
+					shortDescription: 'FM Free Space',
+					longDescription: 'FM Free Space',
+					filePath: '/freespace.pug'
+				},
+				openfiles: {
+					type: CdrPlugin.ContentType.PANEL,
+					shortDescription: 'FM Open Files',
+					longDescription: 'FM Open Files',
+					filePath: '/openfiles.pug'
+				},
+				fileinfo: {
+					type: CdrPlugin.ContentType.PANEL,
+					shortDescription: 'FM File Info',
+					longDescription: 'FM File Info',
+					filePath: '/fileinfo.pug'
+				},
+				dirlist: {
+					type: CdrPlugin.ContentType.PANEL,
+					shortDescription: 'FM Directory Listing',
+					longDescription: 'FM Directory Listing'',
+					filePath: '/dirlist.pug'
+				}
       }
     };
 
