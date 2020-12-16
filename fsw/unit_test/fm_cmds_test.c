@@ -751,11 +751,12 @@ void FM_SetTableStateCmd_Test_TableNotLoaded(void)
 
 } /* end FM_SetTableStateCmd_Test_TableNotLoaded */
 
+static FM_FreeSpaceTable_t     FreeSpaceTable;
+
 void FM_SetTableStateCmd_Test_TableIndexOutOfRange(void)
 {
     boolean Result;
     FM_SetTableStateCmd_t   CmdPacket;
-    FM_FreeSpaceTable_t     FreeSpaceTable;
 
     CFE_SB_InitMsg (&CmdPacket, FM_CMD_MID, sizeof(FM_SetTableStateCmd_t), TRUE);
     CFE_SB_SetCmdCode((CFE_SB_MsgPtr_t)&CmdPacket, FM_SET_TABLE_STATE_CC);
@@ -769,12 +770,12 @@ void FM_SetTableStateCmd_Test_TableIndexOutOfRange(void)
 
     /* Execute the function being tested */
     Result = FM_SetTableStateCmd((CFE_SB_MsgPtr_t)(&CmdPacket));
-    
+
     /* Verify results */
     UtAssert_True (Result == FALSE, "Result == FALSE");
 
     UtAssert_True
-        (Ut_CFE_EVS_EventSent(FM_SET_TABLE_STATE_ARG_ERR_EID, CFE_EVS_ERROR, "Set Table State error: invalid command argument: index = 9"),  
+        (Ut_CFE_EVS_EventSent(FM_SET_TABLE_STATE_ARG_ERR_EID, CFE_EVS_ERROR, "Set Table State error: invalid command argument: index = 9"),
         "Set Table State error: invalid command argument: index = 9");
 
     UtAssert_True (Ut_CFE_EVS_GetEventQueueDepth() == 1, "Ut_CFE_EVS_GetEventQueueDepth() == 1");
@@ -913,7 +914,7 @@ void FM_Cmds_Test_AddTestCases(void)
     UtTest_Add(FM_SetTableStateCmd_Test_TableIndexOutOfRange, FM_Test_Setup, FM_Test_TearDown, "FM_SetTableStateCmd_Test_TableIndexOutOfRange");
     UtTest_Add(FM_SetTableStateCmd_Test_InvalidState, FM_Test_Setup, FM_Test_TearDown, "FM_SetTableStateCmd_Test_InvalidState");
     UtTest_Add(FM_SetTableStateCmd_Test_UnusedTable, FM_Test_Setup, FM_Test_TearDown, "FM_SetTableStateCmd_Test_UnusedTable");
-    
+
     UtTest_Add(FM_SetPermissionsCmd_Test_Nominal, FM_Test_Setup, FM_Test_TearDown, "FM_SetPermissionsCmd_Test_Nominal");
     UtTest_Add(FM_SetPermissionsCmd_Test_InvalidPathTest, FM_Test_Setup, FM_Test_TearDown, "FM_SetPermissionsCmd_Test_InvalidPathTest");
 } /* end FM_Cmds_Test_AddTestCases */

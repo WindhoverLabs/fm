@@ -90,7 +90,8 @@ int32 UT_FM_CMD_UTILS_TEST_CFE_ES_GetTaskInfoHook(CFE_ES_TaskInfo_t *TaskInfo, u
 void FM_IsValidCmdPktLength_Test_InvalidPacketLength(void)
 {
     boolean Result;
-    CFE_SB_MsgPtr_t CmdPacket;
+    char    buffer[500];
+    CFE_SB_MsgPtr_t CmdPacket = (CFE_SB_MsgPtr_t)buffer;
     uint16 ExpectedLength = 1;
     uint32 EventID = 1;
 
