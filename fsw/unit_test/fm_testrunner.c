@@ -38,11 +38,11 @@
 
 int main(void)
 {   
-    FM_App_Test_AddTestCases();
-    FM_Child_Test_AddTestCases();
+    //FM_App_Test_AddTestCases();
+    //FM_Child_Test_AddTestCases();
     FM_Cmds_Test_AddTestCases();
-    FM_Tbl_Test_AddTestCases();
-    FM_Cmd_Utils_Test_AddTestCases();
+    //FM_Tbl_Test_AddTestCases();
+    //FM_Cmd_Utils_Test_AddTestCases();
 
     return(UtTest_Run());
 } /* end main */
