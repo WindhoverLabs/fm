@@ -62,7 +62,7 @@ buildliner_add_app_def(fm
         ${PROJECT_SOURCE_DIR}/apps/fm/fsw/platform_inc
 )
 
-buildliner_add_app_def(fm-ut
+buildliner_add_app_unit_test(fm-ut
     UTASSERT 
     NO_HELGRIND
     NO_MASSIF
